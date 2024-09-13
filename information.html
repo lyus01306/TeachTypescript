@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="prerequisites.html">Prerequisites</a></li>
+                <li><a href="information.html">Information</a></li>
+                <li><a href="flashcards.html">Flashcards</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="pageHeader">TypeScript Tutorial for Beginners</h1>
+    
+        <section class="info-section">
+            <h2>What is TypeScript?</h2>
+            <p>TypeScript is a programming language developed by Microsoft. It's a superset of JavaScript, which means it adds new features and syntax to JavaScript while remaining fully compatible with existing JavaScript code.</p>
+            <p>The main feature TypeScript adds is static typing. This means you can specify the types of variables, function parameters, and return values. This helps catch errors early in the development process and makes code more readable and maintainable.</p>
+        </section>
+        <section class="info-section">
+            <h2>Setting Up TypeScript in a Project</h2>
+            <p>To use TypeScript, follow these steps:</p>
+        
+            <h3>Step 1: Install TypeScript</h3>
+            <p>
+              If you already have Node.js installed, open your terminal and run:
+            </p>
+            <pre><code>npm install -g typescript</code></pre>
+        
+            <h3>Step 2: Create a Project</h3>
+            <p>
+              Create a folder for your project. Inside the folder, open your terminal and run:
+            </p>
+            <pre><code>tsc --init</code></pre>
+            <p>
+              This creates a <code>tsconfig.json</code> file, which defines TypeScript settings for your project.
+            </p>
+        
+            <h3>Step 3: Write TypeScript Code</h3>
+            <p>
+              Create a new file called <code>app.ts</code>. In TypeScript, use the <code>.ts</code> extension.
+            </p>
+            <pre><code>let greeting: string = "Hello, TypeScript!";<br>console.log(greeting);</code></pre>
+        
+            <h3>Step 4: Compile TypeScript to JavaScript</h3>
+            <p>
+              Run the following command to compile your TypeScript code into JavaScript:
+            </p>
+            <pre><code>tsc app.ts</code></pre>
+            <p>This creates a <code>app.js</code> file that can be used in a browser or Node.js.</p>
+        </section>
+    
+        <section class="info-section">
+            <h2>Basic Types in TypeScript</h2>
+            <p>TypeScript supports several basic types:</p>
+            <ul>
+                <li><strong>number:</strong> For numeric values (integers and floats)</li>
+                <li><strong>string:</strong> For text values</li>
+                <li><strong>boolean:</strong> For true/false values</li>
+                <li><strong>any:</strong> For variables that can hold any type of value</li>
+                <li><strong>array:</strong> For lists of values</li>
+                <li><strong>tuple:</strong> For arrays with a fixed number of elements</li>
+                <li><strong>enum:</strong> For sets of named constants</li>
+                <li><strong>void:</strong> Usually used as the return type of functions that do not return a value</li>
+                <li><strong>null and undefined:</strong> For variables with no value assigned</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>let age: number = 25;
+let name: string = "John";
+let isStudent: boolean = true;
+let scores: number[] = [85, 90, 92];
+let person: [string, number] = ["Alice", 30]; // tuple
+enum Color {Red, Green, Blue};
+let c: Color = Color.Green;</code></pre>
+        </section>
+    
+        <section class="info-section">
+            <h2>Interfaces in TypeScript</h2>
+            <p>Interfaces are a powerful way to define the shape of an object in TypeScript. They allow you to specify which properties an object should have and what types those properties should be.</p>
+            <p>Interfaces can also be used to define the shape of a function's parameters and return value.</p>
+            <p>Example:</p>
+            <pre><code>interface Person {
+    name: string;
+    age: number;
+    greet(): string;
+}
+
+let user: Person = {
+    name: "John",
+    age: 30,
+    greet: () => `Hello, I'm ${user.name}`
+};</code></pre>
+        </section>
+    
+        <section class="info-section">
+            <h2>Functions in TypeScript</h2>
+            <p>TypeScript allows you to specify the types of function parameters and return values. This helps prevent errors and makes your code more self-documenting.</p>
+            <p>You can also use optional parameters, default parameters, and rest parameters in TypeScript.</p>
+            <p>Example:</p>
+            <pre><code>function add(x: number, y: number): number {
+    return x + y;
+}
+
+// Arrow function with optional parameter
+const greet = (name?: string): string => {
+    return `Hello, ${name || "there"}!`;
+};</code></pre>
+        </section>
+    
+        <section class="info-section">
+            <h2>Classes in TypeScript</h2>
+            <p>TypeScript supports object-oriented programming with classes. Classes can have properties, methods, and access modifiers (public, private, protected).</p>
+            <p>Example:</p>
+            <pre><code>class Animal {
+    private name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    public makeSound(sound: string): void {
+        console.log(`${this.name} says ${sound}`);
+    }
+}
+
+let dog = new Animal("Rex");
+dog.makeSound("Woof!"); // Output: Rex says Woof!</code></pre>
+        </section>
+    
+        <section class="info-section">
+            <h2>Generics in TypeScript</h2>
+            <p>Generics allow you to write flexible, reusable functions and classes that can work with different types while still providing type safety.</p>
+            <p>Example:</p>
+            <pre><code>function identity<T>(arg: T): T {
+    return arg;
+}
+
+let output1 = identity<string>("myString");
+let output2 = identity<number>(100);</code></pre>
+        </section>
+    
+        <section class="info-section">
+            <h2>Conclusion</h2>
+            <p>TypeScript adds powerful features to JavaScript, making it easier to write and maintain large applications. By learning TypeScript, you can catch errors earlier in the development process, write more readable code, and take advantage of advanced IDE features like improved autocompletion and refactoring tools.</p>
+        </section>
+    </div>
+    
+    <button onclick="window.location.href='flashcards.html'" class="next-button">Go to Flashcards</button>
+
+    <footer class="footer">
+        <p>&copy; 2024 Liban Yusuf - Teaching TypeScript</p>
+    </footer>
+</body>
+</html>
